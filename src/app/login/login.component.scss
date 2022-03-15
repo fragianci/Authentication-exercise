@@ -1,6 +1,5 @@
-h1{
-  font-family: cursive;
-  font-size: 50px;
+h2{
+  font-size: 40px;
   display: flex;
   justify-content: center;
   margin-top: 2%;
@@ -14,7 +13,7 @@ h1{
   justify-content: center;
   background-color: #fff;}
 
-.secondDiv{
+form{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +22,8 @@ h1{
   border: 1px solid grey;
   padding: 10%;
   border-radius: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 input{
@@ -36,4 +37,9 @@ button{
   margin-top: 5px;
   padding: 10px 20px;
   font-size: 20px;
+}
+
+.error{
+  color: red;
+
 }

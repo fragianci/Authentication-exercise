@@ -1,9 +1,17 @@
-<h1>Try this login page</h1>
+<h2>Try this login page</h2>
 <div class="container">
-  <div class="secondDiv">
-    <input type="text" class="form-control" placeholder="E-mail">
-    <input type="text" class="form-control" placeholder="Password">
-    <button class="btn btn-primary">Log in</button>
-  </div>
+  <form [formGroup]="loginForm" (ngSubmit) = "login(loginForm.value)">
+    <input type="text" class="form-control" placeholder="E-mail" formControlName="email">
+    <div *ngIf="loginForm.get('email')?.hasError('pattern')" class="error">* Formato dell'e-mail non corretto</div>
+    <input type="password" class="form-control" placeholder="Password" formControlName="password">
+    <div *ngIf="errorDiv" class="error">* La password o l'e-mail non é corretta</div>
+    <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="!loginForm.valid"
+    >
+      Log in
+    </button>
+  </form>
 </div>
 
