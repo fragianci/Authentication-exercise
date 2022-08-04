@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-page',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-page.component.scss']
 })
 export class UserPageComponent implements OnInit {
-
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
+    let user = localStorage.getItem('token');
+    if(user){
+      this.router.navigate(['account'], {queryParams: {user: user}})
+    }
+    else{
+      this.router.navigate(['login'])
+    }
+
   }
 
 }
