@@ -26,13 +26,6 @@ export class LoginComponent implements OnInit {
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]),
       password: this.formBuilder.control('', Validators.required)
     })
-    let user = localStorage.getItem('token');
-    if(user){
-      this.router.navigate(['account'], {queryParams: {user: user}})
-    }
-    else{
-      this.router.navigate(['login'])
-    }
 
   }
 

@@ -12,13 +12,6 @@ export class UserPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let user = localStorage.getItem('token');
-    if(user){
-      this.router.navigate(['account'], {queryParams: {user: user}})
-    }
-    else{
-      this.router.navigate(['login'])
-    }
 
   }
 
